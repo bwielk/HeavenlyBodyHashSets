@@ -32,6 +32,7 @@ public final class HeavenlyBody {
 	
 	@Override
 	public boolean equals(Object object){
+		System.out.println("!  !  ! The equals() code runs !  !  !");
 		if(this == object){
 			return true;
 		}
@@ -40,5 +41,11 @@ public final class HeavenlyBody {
 		}
 		String objectName = ((HeavenlyBody)object).getName();
 		return this.name.equals(objectName);
+	}
+
+	@Override
+	public int hashCode() {
+		System.out.println("hashCode() called");
+		return this.name.hashCode() + 57;
 	}
 }
