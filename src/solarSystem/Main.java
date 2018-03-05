@@ -44,6 +44,23 @@ public class Main {
 		for(HeavenlyBody planet : planets){
 			System.out.println(planet.getName());
 		}
+		
+		Set<HeavenlyBody> moons = new HashSet<>();
+		for(HeavenlyBody planet : planets){
+			moons.addAll(planet.getSatellites());
+		}
+		
+		System.out.println("All moons in the system");
+		for(HeavenlyBody moon : moons){
+			System.out.println("\t" + moon.getName());
+		}
+		
+		HeavenlyBody jupiter = new HeavenlyBody("Jupiter",842);
+		planets.add(jupiter);
+		
+		for(HeavenlyBody planet : planets){
+			System.out.println(planet.getName() + ": " + planet.getOrbitalPeriod() );
+		}
 	}
 
 }
